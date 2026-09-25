@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymarket Order System</title>
+</head>
+<body>
+    <h1>Polymarket Trading</h1>
+    <button id="buyOrderButton">Buy Order</button>
+
+    <script>
+        // Fetch the API URL of the backend
+        const apiUrl = 'http://localhost:3000/place-order';
+
+        // Function to place the order (Buy)
+        async function placeOrder(orderType) {
+            try {
+                const orderDetails = {
+                    price: 0.50,  // Example price for the order
+                    size: 100,    // Example size for the order
+                    side: orderType, // 'BUY' or 'SELL'
+                    tokenId: "YOUR_TOKEN_ID"  // Replace with actual token ID for the market
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderDetails)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    alert(`Order placed successfully!`);
+                } else {
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
+                console.error("Error placing order:", error);
+                alert("An error occurred while placing the order.");
+            }
+        }
+
+        // Button event listener to manually place an order
+        document.getElementById("buyOrderButton").addEventListener("click", () => placeOrder("BUY"));
+
+        // Create an EventSource to listen for messages from the server
+        const eventSource = new EventSource('http://localhost:3000/events');
+
+        eventSource.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            alert(message.message);  // Display the message from the backend
+
+            // Automatically handle order placement when the backend triggers the condition
+            if (message.message === "Condition met, ready to place order!") {
+                // Automatically simulate a Buy order button click
+                console.log("Order placed automatically by backend!");
+                placeOrder("BUY");  // Automatically place an order (BUY)
+            }
+        };
+
+        // Handle SSE errors
+        eventSource.onerror = (error) => {
+            console.error('SSE Error:', error);
+        };
+    </script>
+</body>
+</html>
