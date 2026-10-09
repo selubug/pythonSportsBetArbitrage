@@ -11,19 +11,19 @@ from py_clob_client.order_builder.constants import BUY
 import os
 from telegram import Bot
 import asyncio
-# Setup for the Polymarket API (ClobClient)
-host = "https://clob.polymarket.com"
-private_key = "0xd29e629f6d71aacad6ee5b15f026de711451575db881d456b068c55e2b728a94"
+
+host = ""
+private_key = ""
 chain_id = 137  # Polygon Mainnet
 creds1 = ApiCreds(   
-    api_key="122380e4-1720-ec43-ec56-5052b6fd7c41",
-    api_secret="HRUfMWUnd20zs4A22hQDkrzPbWioHoZkHJlueCkKQaY=",
-    api_passphrase="29fa091d5f74b9875b573e410e9554eb76624cc350b0bbe5340d625fff07e0a3",
+    api_key="",
+    api_secret="",
+    api_passphrase="",
 )
-bot_token = '7587403778:AAGDMdG_Yf8jn-pkZ3xtoZZ46hsyLsIf0CI'
+bot_token = ''
 chat_id = '7107063732'
 bot = Bot(token=bot_token)
-client = ClobClient(host, key=private_key, chain_id=chain_id, creds=creds1, signature_type=1, funder="0xf7777B2D3f6E9603486B6CEEBC2187E4666a34a5")
+client = ClobClient(host, key=private_key, chain_id=chain_id, creds=creds1, signature_type=1, funder="")
 async def send_message():
     bot = Bot(token=bot_token)
     await bot.send_message(chat_id=chat_id, text="BUY ORDER")
@@ -68,13 +68,13 @@ def place_orders_home():
     print(f"Order Response 3: {resp3}")
   
 # URL for the Pinnacle Odds API
-url = "https://pinnacle-odds.p.rapidapi.com/kit/v1/details"
+url = ""
 querystring = {"event_id": " 1604395774"}
 
 
 # Headers containing your RapidAPI key and the API host
 headers = {
-    "x-rapidapi-key": "bdc3d7bd21msh6bab73819d2bf38p13a880jsn2c5acc778970",  # Replace with your actual RapidAPI key
+    "x-rapidapi-key": "",  # Replace with your actual RapidAPI key
     "x-rapidapi-host": "pinnacle-odds.p.rapidapi.com"
 }
 
