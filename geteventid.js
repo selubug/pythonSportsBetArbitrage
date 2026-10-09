@@ -23,8 +23,7 @@ const fetchDataOnce = async () => {
         const response = await fetch(pinnacleApiUrl, {
             method: 'GET',
             headers: {
-                'x-rapidapi-host': 'pinnacle-odds.p.rapidapi.com',
-                'x-rapidapi-key': 'bdc3d7bd21msh6bab73819d2bf38p13a880jsn2c5acc778970'
+                'x-rapidapi-host': ''
             }
         });
         
