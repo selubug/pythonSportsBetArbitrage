@@ -14,14 +14,14 @@ from telegram import Bot
 import asyncio
 # Setup for the Polymarket API (ClobClient)
 host = "https://clob.polymarket.com"
-private_key = "0xd29e629f6d71aacad6ee5b15f026de711451575db881d456b068c55e2b728a94"
+private_key = ""
 chain_id = 137  # Polygon Mainnet
 creds1 = ApiCreds(   
-    api_key="122380e4-1720-ec43-ec56-5052b6fd7c41",
-    api_secret="HRUfMWUnd20zs4A22hQDkrzPbWioHoZkHJlueCkKQaY=",
-    api_passphrase="29fa091d5f74b9875b573e410e9554eb76624cc350b0bbe5340d625fff07e0a3",
+    api_key="",
+    api_secret="",
+    api_passphrase="",
 )
-bot_token = '7587403778:AAGDMdG_Yf8jn-pkZ3xtoZZ46hsyLsIf0CI'
+bot_token = '7'
 chat_id = '7107063732'
 bot = Bot(token=bot_token)
 client = ClobClient(host, key=private_key, chain_id=chain_id, creds=creds1, signature_type=1, funder="0xf7777B2D3f6E9603486B6CEEBC2187E4666a34a5")
