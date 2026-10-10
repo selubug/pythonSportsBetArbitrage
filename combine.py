@@ -7,7 +7,7 @@ from py_clob_client.client import ApiCreds
 from py_clob_client.clob_types import OrderArgs
 from py_clob_client.order_builder.constants import BUY
 from py_clob_client.order_builder.constants import SELL
-from py_clob_client.clob_types import MarketOrderArgs, OrderType
+from py_clob_client.clob_types import MarketOrderArgs, OrderType//
 from py_clob_client.order_builder.constants import BUY
 import os
 from telegram import Bot
