@@ -238,7 +238,7 @@ async def mainaway5():
     await asyncio.sleep(4)
     await place_order_async(order_args10a)
 # Ensures an event loop is running
-url = "https://pinnacle-odds.p.rapidapi.com/kit/v1/details"
+url = ""
 querystring1 = {"event_id": "1605665116"}  #jazz clips
 querystring2 = {"event_id": "1604444596"}
 querystring3 = {"event_id": "1604444597"}
@@ -248,7 +248,7 @@ querystring5 = {"event_id": "1604393837"}
 
 # Headers containing your RapidAPI key and the API host
 headers = {
-    "x-rapidapi-key": "bdc3d7bd21msh6bab73819d2bf38p13a880jsn2c5acc778970",  # Replace with your actual RapidAPI key
+    "x-rapidapi-key": "",  # Replace with your actual RapidAPI key
     "x-rapidapi-host": "pinnacle-odds.p.rapidapi.com"
 }
 
